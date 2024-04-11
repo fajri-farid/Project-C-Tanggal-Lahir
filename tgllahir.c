@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+// perlu di tambah 10
+
 // Struktur untuk menyimpan tanggal (dari kode kedua)
 struct Tanggal {
     int hari, bulan, tahun;
 };
-
 
 // Struktur untuk menyimpan data nama, tanggal lahir, umur, alamat, dan deskripsi. Konsepnya kek OOP
 struct Person {
@@ -203,9 +204,9 @@ int main() {
                 }
                 break;
             case 3:
-                printf("\n======================================================\n");
-                printf("!    Terima Kasih Telah Menggunakan Aplikasi Kami    !\n");
-                printf("======================================================\n");
+                printf("\n===================================================================\n");
+                printf("!    Terima Kasih Telah Menggunakan Aplikasi Kami                 !\n");
+                printf("===================================================================\n");
                 return 0;
             default:
                 printf("Pilihan tidak valid.\n");
