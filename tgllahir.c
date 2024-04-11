@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 // perlu di tambah 10
 
@@ -561,30 +562,43 @@ int main() {
 
     printf("\nMasukkan tanggal sekarang (format dd/mm/yyyy): "); // Meminta tanggal sekarang di sini
     scanf("%d/%d/%d", &tanggalSekarang.hari, &tanggalSekarang.bulan, &tanggalSekarang.tahun);
+    // Membersihkan buffer input
+    while (getchar() != '\n');
 
     do {
+        int pilihanMenu = 0; // Inisialisasi dengan nilai yang tidak valid
         do {
-            printf("\n======================================================\n");
-            printf("!    Pilih Yang Akan Dilakukan:                      !\n");
-            printf("!    1. Masukkan informasi teman                     !\n");
-            printf("!    2. Tampilkan informasi teman                    !\n");
-            printf("!    3. Informasi zodiak                             !\n");
-            printf("!    4. Selesaikan program                           !\n");
-            printf("======================================================\n");
+    printf("\n======================================================\n");
+    printf("!    Pilih Yang Akan Dilakukan:                      !\n");
+    printf("!    1. Masukkan informasi teman                     !\n");
+    printf("!    2. Tampilkan informasi teman                    !\n");
+    printf("!    3. Informasi zodiak                             !\n");
+    printf("!    4. Selesaikan program                           !\n");
+    printf("======================================================\n");
             
-            printf(" Pilihan: ");
-            scanf("%d", &pilihanMenu);
-    
-            // Membersihkan buffer input
-            while(getchar() != '\n');
+    printf(" Pilihan: ");
+    char input[100]; // Membuat buffer untuk input karakter
 
+    if (fgets(input, sizeof(input), stdin)) { // Membaca input sebagai string
+        input[strcspn(input, "\n")] = 0; // Menghapus karakter newline dari input
+
+        if (isdigit(input[0])) { // Memeriksa apakah karakter pertama adalah digit
+            pilihanMenu = atoi(input); // Mengonversi string menjadi integer
             if (pilihanMenu < 1 || pilihanMenu > 4) {
                 printf("\n=======================WARNING!=======================\n");
                 printf("!               Pilihan tidak valid!                 !\n");
                 printf("!            Silakan pilih 1, 2, atau 3.             !\n");
                 printf("======================================================\n");
             }
-        } while (pilihanMenu < 1 || pilihanMenu > 4);
+        } else {
+            printf("\n=======================WARNING!=======================\n");
+            printf("!         Input tidak valid! Harap masukkan angka.   !\n");
+            printf("======================================================\n");
+            pilihanMenu = 0; // Menetapkan nilai 0 untuk mencegah loop
+        }
+    }
+    } while (pilihanMenu < 1 || pilihanMenu > 4);
+
 
         switch (pilihanMenu) {
             case 1:
@@ -630,6 +644,9 @@ int main() {
                     printf("======================================================\n");
                     printf(" Pilihan: ");
                     scanf("%d", &pilihanZodiak);
+                    // Membersihkan buffer input
+                    while(getchar() != '\n');
+
                     if (pilihanZodiak < 1 || pilihanZodiak > 12) {
                         printf("Pilihan tidak valid. Harap masukkan angka antara 1 hingga 12.\n");
                     }
