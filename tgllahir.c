@@ -13,6 +13,7 @@ struct Tanggal {
 struct Person {
     char nama[100];
     struct Tanggal tanggal_lahir; // Menyimpan tanggal lahir dengan menggunakan struktur Tanggal
+    char favorit[100];
     char alamat[100];
     char deskripsi[100];
 };
@@ -32,6 +33,37 @@ int hitungUsia(struct Tanggal tanggalLahir, struct Tanggal tanggalSekarang) {
     }
 
     return usia;
+}
+
+// Fungsi untuk menentukan zodiak berdasarkan tanggal dan bulan
+char *tentukanZodiak(struct Tanggal tanggal_lahir) {
+    if ((tanggal_lahir.bulan == 3 && tanggal_lahir.hari >= 21) || (tanggal_lahir.bulan == 4 && tanggal_lahir.hari <= 19)) {
+        return "Aries";
+    } else if ((tanggal_lahir.bulan == 4 && tanggal_lahir.hari >= 20) || (tanggal_lahir.bulan == 5 && tanggal_lahir.hari <= 20)) {
+        return "Taurus";
+    } else if ((tanggal_lahir.bulan == 5 && tanggal_lahir.hari >= 21) || (tanggal_lahir.bulan == 6 && tanggal_lahir.hari <= 20)) {
+        return "Gemini";
+    } else if ((tanggal_lahir.bulan == 6 && tanggal_lahir.hari >= 21) || (tanggal_lahir.bulan == 7 && tanggal_lahir.hari <= 22)) {
+        return "Cancer";
+    } else if ((tanggal_lahir.bulan == 7 && tanggal_lahir.hari >= 23) || (tanggal_lahir.bulan == 8 && tanggal_lahir.hari <= 22)) {
+        return "Leo";
+    } else if ((tanggal_lahir.bulan == 8 && tanggal_lahir.hari >= 23) || (tanggal_lahir.bulan == 9 && tanggal_lahir.hari <= 22)) {
+        return "Virgo";
+    } else if ((tanggal_lahir.bulan == 9 && tanggal_lahir.hari >= 23) || (tanggal_lahir.bulan == 10 && tanggal_lahir.hari <= 22)) {
+        return "Libra";
+    } else if ((tanggal_lahir.bulan == 10 && tanggal_lahir.hari >= 23) || (tanggal_lahir.bulan == 11 && tanggal_lahir.hari <= 21)) {
+        return "Scorpio";
+    } else if ((tanggal_lahir.bulan == 11 && tanggal_lahir.hari >= 22) || (tanggal_lahir.bulan == 12 && tanggal_lahir.hari <= 21)) {
+        return "Sagittarius";
+    } else if ((tanggal_lahir.bulan == 12 && tanggal_lahir.hari >= 22) || (tanggal_lahir.bulan == 1 && tanggal_lahir.hari <= 19)) {
+        return "Capricorn";
+    } else if ((tanggal_lahir.bulan == 1 && tanggal_lahir.hari >= 20) || (tanggal_lahir.bulan == 2 && tanggal_lahir.hari <= 18)) {
+        return "Aquarius";
+    } else if ((tanggal_lahir.bulan == 2 && tanggal_lahir.hari >= 19) || (tanggal_lahir.bulan == 3 && tanggal_lahir.hari <= 20)) {
+        return "Pisces";
+    } else {
+        return "Tidak Valid";
+    }
 }
 
 int hariDalamBulan(int bulan, int tahun) {
@@ -134,6 +166,7 @@ void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggal
         } else {
             printf("!   Info Ultah    : %-3d hari lagi                    !\n", sisaHari); // Menampilkan sisa hari ke ultah berikutnya
         }
+        printf("!   Zodiak        : %-30s   !\n", tentukanZodiak(data[i].tanggal_lahir));
         printf("!   Alamat        : %-30s   !\n", data[i].alamat);
         printf("!   Deskripsi     : %-30s   !\n", data[i].deskripsi);
         printf("======================================================\n");
@@ -204,6 +237,8 @@ int main() {
                 }
                 break;
             case 3:
+                
+            case 4:
                 printf("\n===================================================================\n");
                 printf("!    Terima Kasih Telah Menggunakan Aplikasi Kami                 !\n");
                 printf("===================================================================\n");
