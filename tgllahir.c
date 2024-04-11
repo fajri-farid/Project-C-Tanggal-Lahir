@@ -66,6 +66,37 @@ char *tentukanZodiak(struct Tanggal tanggal_lahir) {
     }
 }
 
+void tampilkanInformasiZodiak(int pilihan) {
+    char konfirmasi;
+    switch (pilihan) {
+        case 1:
+            // Tampilkan informasi Aquarius
+            do
+            {
+                printf("Informasi tentang Aquarius...\n");
+                printf("lanjut? : ");
+                scanf(" %c", &konfirmasi);
+
+                if (konfirmasi != 'y') {
+                    printf("Masukkan y untuk keluar.\n");
+                }
+            } while (konfirmasi != 'y');
+
+            // Tampilkan informasi Pisces setelah loop do-while
+            printf("Informasi tentang Pisces...\n");
+            break;
+            
+        case 2:
+            // Tampilkan informasi Pisces
+            printf("Informasi tentang Pisces...\n");
+            break;
+        // Tambahkan case untuk zodiak lainnya di sini
+        default:
+            printf("Pilihan tidak valid.\n");
+    }
+
+}
+
 int hariDalamBulan(int bulan, int tahun) {
     switch (bulan) {
         case 4: case 6: case 9: case 11:
@@ -176,8 +207,9 @@ void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggal
 int main() {
     struct Person data[200];
     int jumlah_data = 0;
-    int pilihan;
-    char lanjut;
+    int pilihanMenu;
+    int pilihanZodiak;
+    char lanjutInformasi;
     struct Tanggal tanggalSekarang; // Deklarasi tanggalSekarang di awal main
 
     printf("======================================================\n");
@@ -195,24 +227,25 @@ int main() {
             printf("!    Pilih Yang Akan Dilakukan:                      !\n");
             printf("!    1. Masukkan informasi teman                     !\n");
             printf("!    2. Tampilkan informasi teman                    !\n");
-            printf("!    3. Selesaikan program                           !\n");
+            printf("!    3. Informasi zodiak                             !\n");
+            printf("!    4. Selesaikan program                           !\n");
             printf("======================================================\n");
             
             printf(" Pilihan: ");
-            scanf("%d", &pilihan);
+            scanf("%d", &pilihanMenu);
     
             // Membersihkan buffer input
             while(getchar() != '\n');
 
-            if (pilihan < 1 || pilihan > 3) {
+            if (pilihanMenu < 1 || pilihanMenu > 4) {
                 printf("\n=======================WARNING!=======================\n");
                 printf("!               Pilihan tidak valid!                 !\n");
                 printf("!            Silakan pilih 1, 2, atau 3.             !\n");
                 printf("======================================================\n");
             }
-        } while (pilihan < 1 || pilihan > 3);
+        } while (pilihanMenu < 1 || pilihanMenu > 4);
 
-        switch (pilihan) {
+        switch (pilihanMenu) {
             case 1:
                 simpanData(data, &jumlah_data);
                 break;
@@ -222,13 +255,13 @@ int main() {
 
                 do {
                 printf("\nApakah Anda ingin kembali ke menu? (y): ");
-                scanf(" %c", &lanjut);
-                if (lanjut != 'y') {
+                scanf(" %c", &lanjutInformasi);
+                if (lanjutInformasi != 'y') {
                 printf("\n======================================================\n");
                 printf("!       Masukan tidak valid. Silakan masukkan y      !");
                 printf("\n======================================================\n");
                  }
-                } while (lanjut != 'y');
+                } while (lanjutInformasi != 'y');
 
                 } else {
                     printf("\n======================================================\n");
@@ -237,7 +270,31 @@ int main() {
                 }
                 break;
             case 3:
-                
+                do {
+                    printf("\n======================================================\n");
+                    printf("!    Pilih zodiak yang ingin Anda ketahui informasinya:  !\n");
+                    printf("!    1. Aquarius                                     !\n");
+                    printf("!    2. Pisces                                       !\n");
+                    printf("!    3. Pisces                                       !\n");
+                    printf("!    4. Pisces                                       !\n");
+                    printf("!    5. Pisces                                       !\n");
+                    printf("!    6. Pisces                                       !\n");
+                    printf("!    7. Pisces                                       !\n");
+                    printf("!    8. Pisces                                       !\n");
+                    printf("!    9. Pisces                                       !\n");
+                    printf("!   10. Pisces                                       !\n");
+                    printf("!   11. Pisces                                       !\n");
+                    printf("!   12. Pisces                                       !\n");
+                    // Tambahkan pilihan zodiak lainnya di sini
+                    printf("======================================================\n");
+                    printf(" Pilihan: ");
+                    scanf("%d", &pilihanZodiak);
+                    if (pilihanZodiak < 1 || pilihanZodiak > 12) {
+                        printf("Pilihan tidak valid. Harap masukkan angka antara 1 hingga 12.\n");
+                    }
+                    } while (pilihanZodiak < 1 || pilihanZodiak > 12);
+                tampilkanInformasiZodiak(pilihanZodiak);
+                break;
             case 4:
                 printf("\n===================================================================\n");
                 printf("!    Terima Kasih Telah Menggunakan Aplikasi Kami                 !\n");
@@ -246,9 +303,7 @@ int main() {
             default:
                 printf("Pilihan tidak valid.\n");
         }
-
-
-    } while(pilihan == 1 || pilihan == 2);
+    } while(pilihanMenu == 1 || pilihanMenu == 2 || pilihanMenu == 3);
 
     printf("\n");
 
