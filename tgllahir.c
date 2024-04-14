@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 
-// Struktur untuk menyimpan tanggal (dari kode kedua)
+// Struktur untuk menyimpan tanggal
 struct Tanggal {
     int hari, bulan, tahun;
 };
@@ -498,13 +498,13 @@ void simpanData(struct Person data[], int *jumlah_data) {
         printf("Masukkan deskripsi: ");
         scanf("%[^\n]", data[*jumlah_data].deskripsi);
 
-        printf("\n======================================================\n");
+        printf("\n===================================================================\n");
         printf("!   Data yang telah dimasukkan:                      !\n");
         printf("!   Nama          : %-30s   !\n", data[*jumlah_data].nama);
         printf("!   Tanggal Lahir : %02d/%02d/%d %-21s !\n", data[*jumlah_data].tanggal_lahir.hari, data[*jumlah_data].tanggal_lahir.bulan, data[*jumlah_data].tanggal_lahir.tahun, ""); // 19s untuk mengakomodasi tulisan "Tanggal Lahir : "
         printf("!   Alamat        : %-30s   !\n", data[*jumlah_data].alamat);
         printf("!   Deskripsi     : %-30s   !\n", data[*jumlah_data].deskripsi);
-        printf("======================================================\n");
+        printf("===================================================================\n");
 
         printf("Apakah data di atas sudah benar? (y/n): ");
         scanf(" %c", &konfirmasi);
@@ -523,9 +523,9 @@ void simpanData(struct Person data[], int *jumlah_data) {
 
 // Prosedur untuk menampilkan semua data yang telah dimasukkan
 void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggalSekarang) {
-    printf("======================================================\n");
-    printf("!             Daftar Tanggal Lahir Teman             !\n");
-    printf("======================================================\n");
+    printf("===================================================================\n");
+    printf("!             Daftar Tanggal Lahir Teman                          !\n");
+    printf("===================================================================\n");
     for (int i = 0; i < jumlah_data; i++) {
         int usia = hitungUsia(data[i].tanggal_lahir, tanggalSekarang); // Hitung usia menggunakan fungsi hitungUsia
         int sisaHari = hariMenujuUlangTahunBerikutnya(data[i].tanggal_lahir, tanggalSekarang);
@@ -541,7 +541,7 @@ void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggal
         printf("!   Zodiak        : %-30s   !\n", tentukanZodiak(data[i].tanggal_lahir));
         printf("!   Alamat        : %-30s   !\n", data[i].alamat);
         printf("!   Deskripsi     : %-30s   !\n", data[i].deskripsi);
-        printf("======================================================\n");
+        printf("===================================================================\n");
     }
 }
 
@@ -553,11 +553,11 @@ int main() {
     char lanjutInformasi;
     struct Tanggal tanggalSekarang; // Deklarasi tanggalSekarang di awal main
 
-    printf("======================================================\n");
-    printf("!  Selamat Datang Di Daftar Tahun Lahir Teman       !\n");
-    printf("!         Memori yang Tak Tergantikan               !\n");
-    printf("!   Simpanlah Tahun Lahir Teman Anda di Sini        !\n");
-    printf("=====================================================\n");
+    printf("\n===================================================================\n");
+    printf("!  Selamat Datang Di Daftar Tahun Lahir Teman                     !\n");
+    printf("!         Memori yang Tak Tergantikan                             !\n");
+    printf("!   Simpanlah Tahun Lahir Teman Anda di Sini                      !\n");
+    printf("===================================================================\n");
 
     printf("\nMasukkan tanggal sekarang (format dd/mm/yyyy): "); // Meminta tanggal sekarang di sini
     scanf("%d/%d/%d", &tanggalSekarang.hari, &tanggalSekarang.bulan, &tanggalSekarang.tahun);
@@ -567,13 +567,13 @@ int main() {
     do {
         int pilihanMenu = 0; // Inisialisasi dengan nilai yang tidak valid
         do {
-    printf("\n======================================================\n");
-    printf("!    Pilih Yang Akan Dilakukan:                      !\n");
-    printf("!    1. Masukkan informasi teman                     !\n");
-    printf("!    2. Tampilkan informasi teman                    !\n");
-    printf("!    3. Informasi zodiak                             !\n");
-    printf("!    4. Selesaikan program                           !\n");
-    printf("======================================================\n");
+    printf("\n===================================================================\n");
+    printf("!    Pilih Yang Akan Dilakukan:                                   !\n");
+    printf("!    1. Masukkan informasi teman                                  !\n");
+    printf("!    2. Tampilkan informasi teman                                 !\n");
+    printf("!    3. Informasi zodiak                                          !\n");
+    printf("!    4. Selesaikan program                                        !\n");
+    printf("===================================================================\n");
             
     printf(" Pilihan: ");
     char input[100]; // Membuat buffer untuk input karakter
@@ -584,15 +584,15 @@ int main() {
         if (isdigit(input[0])) { // Memeriksa apakah karakter pertama adalah digit
             pilihanMenu = atoi(input); // Mengonversi string menjadi integer
             if (pilihanMenu < 1 || pilihanMenu > 4) {
-                printf("\n=======================WARNING!=======================\n");
-                printf("!               Pilihan tidak valid!                 !\n");
-                printf("!            Silakan pilih 1, 2, atau 3.             !\n");
-                printf("======================================================\n");
+                printf("\n===================================================================\n");
+                printf("!               Pilihan tidak valid!                              !\n");
+                printf("!            Silakan pilih 1, 2, atau 3.                          !\n");
+                printf("===================================================================\n");
             }
         } else {
-            printf("\n=======================WARNING!=======================\n");
-            printf("!         Input tidak valid! Harap masukkan angka.   !\n");
-            printf("======================================================\n");
+            printf("\n===================================================================\n");
+            printf("!              Input tidak valid! Harap masukkan angka 1-4.       !\n");
+            printf("===================================================================\n");
             pilihanMenu = 0; // Menetapkan nilai 0 untuk mencegah loop
         }
     }
@@ -611,36 +611,35 @@ int main() {
                 printf("\nApakah Anda ingin kembali ke menu? (y): ");
                 scanf(" %c", &lanjutInformasi);
                 if (lanjutInformasi != 'y') {
-                printf("\n======================================================\n");
-                printf("!       Masukan tidak valid. Silakan masukkan y      !");
-                printf("\n======================================================\n");
+                printf("\n===================================================================\n");
+                printf("!       Masukan tidak valid. Silakan masukkan y                   !");
+                printf("===================================================================\n");
                  }
                 } while (lanjutInformasi != 'y');
 
                 } else {
-                    printf("\n======================================================\n");
-                    printf("!          Belum ada data yang dimasukkan.           !\n");
-                    printf("======================================================\n");
+                    printf("\n===================================================================\n");
+                    printf("!          Belum ada data yang dimasukkan.                        !\n");
+                    printf("===================================================================\n");
                 }
                 break;
             case 3:
                 do {
-                    printf("\n======================================================\n");
-                    printf("!    Pilih zodiak yang ingin Anda ketahui informasinya:  !\n");
-                    printf("!    1. Aquarius                                     !\n");
-                    printf("!    2. Pisces                                       !\n");
-                    printf("!    3. Aries                                        !\n");
-                    printf("!    4. Taurus                                       !\n");
-                    printf("!    5. Gemini                                       !\n");
-                    printf("!    6. Cancer                                       !\n");
-                    printf("!    7. Leo                                          !\n");
-                    printf("!    8. Virgo                                        !\n");
-                    printf("!    9. Libra                                        !\n");
-                    printf("!   10. Scorpio                                      !\n");
-                    printf("!   11. Sagitarius                                   !\n");
-                    printf("!   12. Capricon                                     !\n");
-                    // Tambahkan pilihan zodiak lainnya di sini
-                    printf("======================================================\n");
+                    printf("\n===================================================================\n");
+                    printf("!    Pilih zodiak yang ingin Anda ketahui informasinya:           !\n");
+                    printf("!    1. Aquarius                                                  !\n");
+                    printf("!    2. Pisces                                                    !\n");
+                    printf("!    3. Aries                                                     !\n");
+                    printf("!    4. Taurus                                                    !\n");
+                    printf("!    5. Gemini                                                    !\n");
+                    printf("!    6. Cancer                                                    !\n");
+                    printf("!    7. Leo                                                       !\n");
+                    printf("!    8. Virgo                                                     !\n");
+                    printf("!    9. Libra                                                     !\n");
+                    printf("!   10. Scorpio                                                   !\n");
+                    printf("!   11. Sagitarius                                                !\n");
+                    printf("!   12. Capricon                                                  !\n");
+                    printf("===================================================================\n");
                     printf(" Pilihan: ");
                     scanf("%d", &pilihanZodiak);
                     // Membersihkan buffer input
@@ -654,9 +653,9 @@ int main() {
                 break;
             case 4:
                 printf("\n===================================================================\n");
-                printf("!           Terima Kasih Telah Menggunakan Aplikasi Kami            !\n");
-                printf("!                         Projek Goku 2024                          !\n");
-                printf("!            Projek Akhir Algoritma dan Struktur Data               !\n");
+                printf("!           Terima Kasih Telah Menggunakan Aplikasi Kami          !\n");
+                printf("!                         Projek Goku 2024                        !\n");
+                printf("!            Projek Akhir Algoritma dan Struktur Data             !\n");
                 printf("===================================================================\n");
                 return 0;
             default:
