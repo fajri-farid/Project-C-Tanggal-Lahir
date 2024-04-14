@@ -127,7 +127,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
 
         case 3:
@@ -158,7 +157,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 4:
             do
@@ -188,7 +186,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 5:
             do
@@ -218,7 +215,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 6:
             do
@@ -248,7 +244,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 7:
             do
@@ -278,7 +273,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 8:
             do
@@ -308,7 +302,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 9:
             do
@@ -338,7 +331,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 10:
             do
@@ -368,7 +360,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 11:
             do
@@ -399,7 +390,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         case 12:
             do
@@ -429,7 +419,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("Masukkan y untuk keluar.\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            // printf("Informasi tentang Pisces...\n");
             break;
         // Tambahkan case untuk zodiak lainnya di sini
         default:
@@ -497,13 +486,19 @@ void simpanData(struct Person data[], int *jumlah_data) {
 
         printf("Masukkan deskripsi: ");
         scanf("%[^\n]", data[*jumlah_data].deskripsi);
+        // Membersihkan newline yang masih tersisa di buffer
+        while (getchar() != '\n');
+
+        printf("Masukkan kesukaan: ");
+        scanf("%[^\n]", data[*jumlah_data].favorit);
 
         printf("\n===================================================================\n");
-        printf("!   Data yang telah dimasukkan:                      !\n");
-        printf("!   Nama          : %-30s   !\n", data[*jumlah_data].nama);
-        printf("!   Tanggal Lahir : %02d/%02d/%d %-21s !\n", data[*jumlah_data].tanggal_lahir.hari, data[*jumlah_data].tanggal_lahir.bulan, data[*jumlah_data].tanggal_lahir.tahun, ""); // 19s untuk mengakomodasi tulisan "Tanggal Lahir : "
-        printf("!   Alamat        : %-30s   !\n", data[*jumlah_data].alamat);
-        printf("!   Deskripsi     : %-30s   !\n", data[*jumlah_data].deskripsi);
+        printf("!   Data yang telah dimasukkan:                                   !\n");
+        printf("!   Nama          : %-43s   !\n", data[*jumlah_data].nama);
+        printf("!   Tanggal Lahir : %02d/%02d/%d %-34s !\n", data[*jumlah_data].tanggal_lahir.hari, data[*jumlah_data].tanggal_lahir.bulan, data[*jumlah_data].tanggal_lahir.tahun, ""); // 19s untuk mengakomodasi tulisan "Tanggal Lahir : "
+        printf("!   Alamat        : %-43s   !\n", data[*jumlah_data].alamat);
+        printf("!   Deskripsi     : %-43s   !\n", data[*jumlah_data].deskripsi);
+        printf("!   Kesukaan      : %-43s   !\n", data[*jumlah_data].favorit);
         printf("===================================================================\n");
 
         printf("Apakah data di atas sudah benar? (y/n): ");
@@ -529,18 +524,19 @@ void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggal
     for (int i = 0; i < jumlah_data; i++) {
         int usia = hitungUsia(data[i].tanggal_lahir, tanggalSekarang); // Hitung usia menggunakan fungsi hitungUsia
         int sisaHari = hariMenujuUlangTahunBerikutnya(data[i].tanggal_lahir, tanggalSekarang);
-        printf("!   Data ke-%-3d                                      !\n", i + 1); // 3d berarti bagiannya 3 karakter minimal
-        printf("!   Nama          : %-30s   !\n", data[i].nama); // 30s berartikan dia akan menetapkan minimal 30 karakter yang otomatis tercetak, walaupun ada yang tidak terisi
-        printf("!   Tanggal Lahir : %02d/%02d/%d %-19s   !\n", data[i].tanggal_lahir.hari, data[i].tanggal_lahir.bulan, data[i].tanggal_lahir.tahun, ""); // 19s untuk mengakomodasi tulisan "Tanggal Lahir : "
-        printf("!   Usia          : %-2d tahun                         !\n", usia); // Menampilkan usia
+        printf("!   Data ke-%-3d                                                   !\n", i + 1); // 3d berarti bagiannya 3 karakter minimal
+        printf("!   Nama          : %-43s   !\n", data[i].nama); // 30s berartikan dia akan menetapkan minimal 30 karakter yang otomatis tercetak, walaupun ada yang tidak terisi
+        printf("!   Tanggal Lahir : %02d/%02d/%d %-32s   !\n", data[i].tanggal_lahir.hari, data[i].tanggal_lahir.bulan, data[i].tanggal_lahir.tahun, ""); // 19s untuk mengakomodasi tulisan "Tanggal Lahir : "
+        printf("!   Usia          : %-2d tahun                                      !\n", usia); // Menampilkan usia
         if (sisaHari == 0) {
-            printf("!   Info Ultah    : Hari ini adalah ulang tahunnya!  !\n");
+            printf("!   Info Ultah    : Hari ini adalah ulang tahunnya!               !\n");
         } else {
-            printf("!   Info Ultah    : %-3d hari lagi                    !\n", sisaHari); // Menampilkan sisa hari ke ultah berikutnya
+            printf("!   Info Ultah    : %-3d hari lagi                                 !\n", sisaHari); // Menampilkan sisa hari ke ultah berikutnya
         }
-        printf("!   Zodiak        : %-30s   !\n", tentukanZodiak(data[i].tanggal_lahir));
-        printf("!   Alamat        : %-30s   !\n", data[i].alamat);
-        printf("!   Deskripsi     : %-30s   !\n", data[i].deskripsi);
+        printf("!   Zodiak        : %-43s   !\n", tentukanZodiak(data[i].tanggal_lahir));
+        printf("!   Alamat        : %-43s   !\n", data[i].alamat);
+        printf("!   Deskripsi     : %-43s   !\n", data[i].deskripsi);
+        printf("!   Kesukaan      : %-43s   !\n", data[i].favorit);
         printf("===================================================================\n");
     }
 }
@@ -554,9 +550,9 @@ int main() {
     struct Tanggal tanggalSekarang; // Deklarasi tanggalSekarang di awal main
 
     printf("\n===================================================================\n");
-    printf("!  Selamat Datang Di Daftar Tahun Lahir Teman                     !\n");
-    printf("!         Memori yang Tak Tergantikan                             !\n");
-    printf("!   Simpanlah Tahun Lahir Teman Anda di Sini                      !\n");
+    printf("!          Selamat Datang Di Daftar Tahun Lahir Teman             !\n");
+    printf("!                Memori yang Tak Tergantikan                      !\n");
+    printf("!           Simpanlah Tahun Lahir Teman Anda di Sini              !\n");
     printf("===================================================================\n");
 
     printf("\nMasukkan tanggal sekarang (format dd/mm/yyyy): "); // Meminta tanggal sekarang di sini
@@ -585,8 +581,7 @@ int main() {
             pilihanMenu = atoi(input); // Mengonversi string menjadi integer
             if (pilihanMenu < 1 || pilihanMenu > 4) {
                 printf("\n===================================================================\n");
-                printf("!               Pilihan tidak valid!                              !\n");
-                printf("!            Silakan pilih 1, 2, atau 3.                          !\n");
+                printf("!              Input tidak valid! Harap masukkan angka 1-4.       !\n");
                 printf("===================================================================\n");
             }
         } else {
@@ -612,14 +607,14 @@ int main() {
                 scanf(" %c", &lanjutInformasi);
                 if (lanjutInformasi != 'y') {
                 printf("\n===================================================================\n");
-                printf("!       Masukan tidak valid. Silakan masukkan y                   !");
+                printf("!            Masukan tidak valid. Silakan masukkan y              !");
                 printf("===================================================================\n");
                  }
                 } while (lanjutInformasi != 'y');
 
                 } else {
                     printf("\n===================================================================\n");
-                    printf("!          Belum ada data yang dimasukkan.                        !\n");
+                    printf("!                Belum ada data yang dimasukkan.                  !\n");
                     printf("===================================================================\n");
                 }
                 break;
@@ -640,6 +635,7 @@ int main() {
                     printf("!   11. Sagitarius                                                !\n");
                     printf("!   12. Capricon                                                  !\n");
                     printf("===================================================================\n");
+                    
                     printf(" Pilihan: ");
                     scanf("%d", &pilihanZodiak);
                     // Membersihkan buffer input
