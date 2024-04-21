@@ -441,30 +441,6 @@ int hariDalamBulan(int bulan, int tahun) {
     }
 }
 
-int hariMenujuUlangTahunBerikutnya(struct Tanggal tanggalLahir, struct Tanggal tanggalSekarang) {
-    int jumlahHari = 0;
-
-    // Jika bulan lahir lebih besar dari bulan sekarang atau bulan lahir sama tapi hari lahir lebih besar
-    if (tanggalLahir.bulan > tanggalSekarang.bulan || (tanggalLahir.bulan == tanggalSekarang.bulan && tanggalLahir.hari > tanggalSekarang.hari)) {
-        jumlahHari += tanggalLahir.hari - tanggalSekarang.hari; // Hari tersisa di bulan ini
-        for (int i = tanggalSekarang.bulan + 1; i <= tanggalLahir.bulan; i++) {
-            jumlahHari += hariDalamBulan(i, tanggalLahir.tahun);
-        }
-    } else if (tanggalLahir.bulan == tanggalSekarang.bulan && tanggalLahir.hari == tanggalSekarang.hari) {
-        return 0; // Hari ini adalah ulang tahunnya
-    } else {
-        jumlahHari += tanggalLahir.hari - tanggalSekarang.hari; // Hari tersisa di bulan ini
-        for (int i = tanggalSekarang.bulan + 1; i <= 12; i++) {
-            jumlahHari += hariDalamBulan(i, tanggalLahir.tahun);
-        }
-        for (int i = 1; i < tanggalLahir.bulan; i++) {
-            jumlahHari += hariDalamBulan(i, tanggalLahir.tahun);
-        }
-    }
-
-    return jumlahHari;
-}
-
 // Fungsi untuk menyimpan nama, tanggal lahir, dan menghitung umur
 void simpanData(struct Person data[], int *jumlah_data) {
     char konfirmasi;
@@ -523,16 +499,10 @@ void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggal
     printf("===================================================================\n");
     for (int i = 0; i < jumlah_data; i++) {
         int usia = hitungUsia(data[i].tanggal_lahir, tanggalSekarang); // Hitung usia menggunakan fungsi hitungUsia
-        int sisaHari = hariMenujuUlangTahunBerikutnya(data[i].tanggal_lahir, tanggalSekarang);
         printf("!   Data ke-%-3d                                                   !\n", i + 1); // 3d berarti bagiannya 3 karakter minimal
         printf("!   Nama          : %-43s   !\n", data[i].nama); // 30s berartikan dia akan menetapkan minimal 30 karakter yang otomatis tercetak, walaupun ada yang tidak terisi
         printf("!   Tanggal Lahir : %02d/%02d/%d %-32s   !\n", data[i].tanggal_lahir.hari, data[i].tanggal_lahir.bulan, data[i].tanggal_lahir.tahun, ""); // 19s untuk mengakomodasi tulisan "Tanggal Lahir : "
         printf("!   Usia          : %-2d tahun                                      !\n", usia); // Menampilkan usia
-        if (sisaHari == 0) {
-            printf("!   Info Ultah    : Hari ini adalah ulang tahunnya!               !\n");
-        } else {
-            printf("!   Info Ultah    : %-3d hari lagi                                 !\n", sisaHari); // Menampilkan sisa hari ke ultah berikutnya
-        }
         printf("!   Zodiak        : %-43s   !\n", tentukanZodiak(data[i].tanggal_lahir));
         printf("!   Alamat        : %-43s   !\n", data[i].alamat);
         printf("!   Deskripsi     : %-43s   !\n", data[i].deskripsi);
