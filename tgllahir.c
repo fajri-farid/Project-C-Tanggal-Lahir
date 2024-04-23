@@ -3,7 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 
-
 // Struktur untuk menyimpan tanggal
 struct Tanggal {
     int hari, bulan, tahun;
@@ -17,23 +16,6 @@ struct Person {
     char alamat[100];
     char deskripsi[100];
 };
-
-int hitungUsia(struct Tanggal tanggalLahir, struct Tanggal tanggalSekarang) {
-    int usia = tanggalSekarang.tahun - tanggalLahir.tahun;
-
-    // Periksa apakah bulan lahir lebih besar dari bulan sekarang
-    if (tanggalLahir.bulan > tanggalSekarang.bulan) {
-        usia--;
-    }
-    // Jika bulan lahir sama dengan bulan sekarang, periksa harinya
-    else if (tanggalLahir.bulan == tanggalSekarang.bulan) {
-        if (tanggalLahir.hari > tanggalSekarang.hari) {
-            usia--;
-        }
-    }
-
-    return usia;
-}
 
 // Fungsi untuk menentukan zodiak berdasarkan tanggal dan bulan
 char *tentukanZodiak(struct Tanggal tanggal_lahir) {
@@ -427,18 +409,21 @@ void tampilkanInformasiZodiak(int pilihan) {
 
 }
 
-int hariDalamBulan(int bulan, int tahun) {
-    switch (bulan) {
-        case 4: case 6: case 9: case 11:
-            return 30;
-        case 2:
-            if ((tahun % 4 == 0 && tahun % 100 != 0) || (tahun % 400 == 0))
-                return 29;
-            else
-                return 28;
-        default:
-            return 31;
+int hitungUsia(struct Tanggal tanggalLahir, struct Tanggal tanggalSekarang) {
+    int usia = tanggalSekarang.tahun - tanggalLahir.tahun;
+
+    // Periksa apakah bulan lahir lebih besar dari bulan sekarang
+    if (tanggalLahir.bulan > tanggalSekarang.bulan) {
+        usia--;
     }
+    // Jika bulan lahir sama dengan bulan sekarang, periksa harinya
+    else if (tanggalLahir.bulan == tanggalSekarang.bulan) {
+        if (tanggalLahir.hari > tanggalSekarang.hari) {
+            usia--;
+        }
+    }
+
+    return usia;
 }
 
 // Fungsi untuk menyimpan nama, tanggal lahir, dan menghitung umur
@@ -511,6 +496,7 @@ void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggal
     }
 }
 
+// fungsi utama dari program ini!
 int main() {
     struct Person data[200];
     int jumlah_data = 0;
