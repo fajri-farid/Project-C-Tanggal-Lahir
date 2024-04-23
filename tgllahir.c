@@ -575,6 +575,7 @@ int main() {
                 do {
                 printf("\nApakah Anda ingin kembali ke menu? (y): ");
                 scanf(" %c", &lanjutInformasi);
+                while(getchar() != '\n');
                 if (lanjutInformasi != 'y') {
                 printf("\n===================================================================\n");
                 printf("!            Masukan tidak valid. Silakan masukkan y              !");
