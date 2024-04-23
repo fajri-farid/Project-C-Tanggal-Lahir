@@ -75,8 +75,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H"); 
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -105,8 +109,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -135,8 +143,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -164,8 +176,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -193,8 +209,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -222,8 +242,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -251,8 +275,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -280,8 +308,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -309,8 +341,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -338,8 +374,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -368,8 +408,12 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
@@ -397,14 +441,19 @@ void tampilkanInformasiZodiak(int pilihan) {
                 scanf(" %c", &konfirmasiInformasiZodiak);
                 while(getchar() != '\n'); // Membersihkan buffer input
 
+                printf("\033[2J\033[1;1H");
+
                 if (konfirmasiInformasiZodiak != 'y') {
-                    printf("Masukkan y untuk keluar.\n");
+                    printf("===================================================================\n");
+                    printf("!                      Masukkan y untuk keluar                    !\n");
+                    printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
             break;
         // Tambahkan case untuk zodiak lainnya di sini
         default:
             printf("Pilihan tidak valid.\n");
+            printf("\033[2J\033[1;1H");
     }
 
 }
@@ -453,6 +502,8 @@ void simpanData(struct Person data[], int *jumlah_data) {
         printf("Masukkan kesukaan: ");
         scanf("%[^\n]", data[*jumlah_data].favorit);
 
+        printf("\033[2J\033[1;1H"); 
+
         printf("\n===================================================================\n");
         printf("!   Data yang telah dimasukkan:                                   !\n");
         printf("!   Nama          : %-43s   !\n", data[*jumlah_data].nama);
@@ -464,6 +515,8 @@ void simpanData(struct Person data[], int *jumlah_data) {
 
         printf("Apakah data di atas sudah benar? (y/n): ");
         scanf(" %c", &konfirmasi);
+
+        printf("\033[2J\033[1;1H"); 
 
         // Membersihkan newline yang masih tersisa di buffer
         while (getchar() != '\n');
@@ -487,7 +540,7 @@ void tampilkanData(struct Person data[], int jumlah_data, struct Tanggal tanggal
         printf("!   Data ke-%-3d                                                   !\n", i + 1); // 3d berarti bagiannya 3 karakter minimal
         printf("!   Nama          : %-43s   !\n", data[i].nama); // 30s berartikan dia akan menetapkan minimal 30 karakter yang otomatis tercetak, walaupun ada yang tidak terisi
         printf("!   Tanggal Lahir : %02d/%02d/%d %-32s   !\n", data[i].tanggal_lahir.hari, data[i].tanggal_lahir.bulan, data[i].tanggal_lahir.tahun, ""); // 19s untuk mengakomodasi tulisan "Tanggal Lahir : "
-        printf("!   Usia          : %-2d tahun                                      !\n", usia); // Menampilkan usia
+        printf("!   Usia          : %-4d tahun                                    !\n", usia); // Menampilkan usia
         printf("!   Zodiak        : %-43s   !\n", tentukanZodiak(data[i].tanggal_lahir));
         printf("!   Alamat        : %-43s   !\n", data[i].alamat);
         printf("!   Deskripsi     : %-43s   !\n", data[i].deskripsi);
@@ -516,23 +569,27 @@ int main() {
     // Membersihkan buffer input
     while (getchar() != '\n');
 
+    printf("\033[2J\033[1;1H"); 
+
     do {
         int pilihanMenu = 0; // Inisialisasi dengan nilai yang tidak valid
         do {
-    printf("\n===================================================================\n");
-    printf("!    Pilih Yang Akan Dilakukan:                                   !\n");
-    printf("!    1. Masukkan informasi teman                                  !\n");
-    printf("!    2. Tampilkan informasi teman                                 !\n");
-    printf("!    3. Informasi zodiak                                          !\n");
-    printf("!    4. Selesaikan program                                        !\n");
-    printf("===================================================================\n");
             
+            printf("\n===================================================================\n");
+            printf("!    Pilih Yang Akan Dilakukan:                                   !\n");
+            printf("!    1. Masukkan informasi teman                                  !\n");
+            printf("!    2. Tampilkan informasi teman                                 !\n");
+            printf("!    3. Informasi zodiak                                          !\n");
+            printf("!    4. Selesaikan program                                        !\n");
+            printf("===================================================================\n");  
+    
     printf(" Pilihan: ");
     char input[100]; // Membuat buffer untuk input karakter
 
     if (fgets(input, sizeof(input), stdin)) { // Membaca input sebagai string
         input[strcspn(input, "\n")] = 0; // Menghapus karakter newline dari input
-
+        printf("\033[2J\033[1;1H"); 
+        
         if (isdigit(input[0])) { // Memeriksa apakah karakter pertama adalah digit
             pilihanMenu = atoi(input); // Mengonversi string menjadi integer
             if (pilihanMenu < 1 || pilihanMenu > 4) {
@@ -549,6 +606,7 @@ int main() {
     }
     } while (pilihanMenu < 1 || pilihanMenu > 4);
 
+        printf("\033[2J\033[1;1H"); 
 
         switch (pilihanMenu) {
             case 1:
@@ -562,10 +620,13 @@ int main() {
                 printf("\nApakah Anda ingin kembali ke menu? (y): ");
                 scanf(" %c", &lanjutInformasi);
                 while(getchar() != '\n');
+
+                printf("\033[2J\033[1;1H"); 
+
                 if (lanjutInformasi != 'y') {
-                printf("\n===================================================================\n");
-                printf("!            Masukan tidak valid. Silakan masukkan y              !");
-                printf("===================================================================\n");
+                    printf("\n=============================================================================\n");
+                    printf("!                Masukkan tidak valid. Silahkan Masukkan y                  !\n");
+                    printf("=============================================================================\n");
                  }
                 } while (lanjutInformasi != 'y');
 
@@ -575,35 +636,40 @@ int main() {
                     printf("===================================================================\n");
                 }
                 break;
-            case 3:
+            case 3:                
+                printf("\033[2J\033[1;1H");
+                printf("\n===================================================================\n");
+                printf("!    Pilih zodiak yang ingin Anda ketahui informasinya:           !\n");
+                printf("!    1. Aquarius                                                  !\n");
+                printf("!    2. Pisces                                                    !\n");
+                printf("!    3. Aries                                                     !\n");
+                printf("!    4. Taurus                                                    !\n");
+                printf("!    5. Gemini                                                    !\n");
+                printf("!    6. Cancer                                                    !\n");
+                printf("!    7. Leo                                                       !\n");
+                printf("!    8. Virgo                                                     !\n");
+                printf("!    9. Libra                                                     !\n");
+                printf("!   10. Scorpio                                                   !\n");
+                printf("!   11. Sagitarius                                                !\n");
+                printf("!   12. Capricon                                                  !\n");
+                printf("===================================================================\n");
+
                 do {
-                    printf("\n===================================================================\n");
-                    printf("!    Pilih zodiak yang ingin Anda ketahui informasinya:           !\n");
-                    printf("!    1. Aquarius                                                  !\n");
-                    printf("!    2. Pisces                                                    !\n");
-                    printf("!    3. Aries                                                     !\n");
-                    printf("!    4. Taurus                                                    !\n");
-                    printf("!    5. Gemini                                                    !\n");
-                    printf("!    6. Cancer                                                    !\n");
-                    printf("!    7. Leo                                                       !\n");
-                    printf("!    8. Virgo                                                     !\n");
-                    printf("!    9. Libra                                                     !\n");
-                    printf("!   10. Scorpio                                                   !\n");
-                    printf("!   11. Sagitarius                                                !\n");
-                    printf("!   12. Capricon                                                  !\n");
-                    printf("===================================================================\n");
-                    
                     printf(" Pilihan: ");
                     scanf("%d", &pilihanZodiak);
                     // Membersihkan buffer input
                     while(getchar() != '\n');
-
+                    
                     if (pilihanZodiak < 1 || pilihanZodiak > 12) {
-                        printf("Pilihan tidak valid. Harap masukkan angka antara 1 hingga 12.\n");
+                        printf("\n===================================================================\n");
+                        printf("!  Pilihan tidak valid. Harap masukkan angka antara 1 hingga 12.  !\n");
+                        printf("===================================================================\n");
                     }
-                    } while (pilihanZodiak < 1 || pilihanZodiak > 12);
+                } while (pilihanZodiak < 1 || pilihanZodiak > 12);
+                printf("\033[2J\033[1;1H");
                 tampilkanInformasiZodiak(pilihanZodiak);
                 break;
+
             case 4:
                 printf("\n===================================================================\n");
                 printf("!           Terima Kasih Telah Menggunakan Aplikasi Kami          !\n");
