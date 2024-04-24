@@ -449,11 +449,6 @@ void tampilkanInformasiZodiak(int pilihan) {
                     printf("===================================================================\n");
                 }
             } while (konfirmasiInformasiZodiak != 'y');
-            break;
-        // Tambahkan case untuk zodiak lainnya di sini
-        default:
-            printf("Pilihan tidak valid.\n");
-            printf("\033[2J\033[1;1H");
     }
 
 }
@@ -522,7 +517,9 @@ void simpanData(struct Person data[], int *jumlah_data) {
         while (getchar() != '\n');
 
         if (konfirmasi != 'y') {
-            printf("Silakan masukkan data kembali.\n");
+            printf("===================================================================\n");
+            printf("!                  Silakan masukkan data kembali!                 !\n");
+            printf("===================================================================\n");
         }
     } while (konfirmasi != 'y');
 
@@ -677,8 +674,6 @@ int main() {
                 printf("!            Projek Akhir Algoritma dan Struktur Data             !\n");
                 printf("===================================================================\n");
                 return 0;
-            default:
-                printf("Pilihan tidak valid.\n");
         }
     } while(pilihanMenu !=4);
 
