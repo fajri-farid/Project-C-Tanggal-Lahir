@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include <stdlib.h> // atoi()
+#include <string.h> // strcspn()
+#include <ctype.h> // isDigit()
 
 // Struktur untuk menyimpan tanggal
 struct Tanggal {
@@ -562,16 +562,17 @@ int main() {
     printf("===================================================================\n");
 
     printf("\nMasukkan tanggal sekarang (format dd/mm/yyyy): "); // Meminta tanggal sekarang di sini
-    scanf("%d/%d/%d", &tanggalSekarang.hari, &tanggalSekarang.bulan, &tanggalSekarang.tahun);
+    scanf("%d/%d/%d", &tanggalSekarang.hari, &tanggalSekarang.bulan, &tanggalSekarang.tahun); // 26/04/2024
     // Membersihkan buffer input
     while (getchar() != '\n');
 
+    // Membersihkan layar
     printf("\033[2J\033[1;1H"); 
 
+    // pemilihan menu
     do {
         int pilihanMenu = 0; // Inisialisasi dengan nilai yang tidak valid
         do {
-            
             printf("\n===================================================================\n");
             printf("!    Pilih Yang Akan Dilakukan:                                   !\n");
             printf("!    1. Masukkan informasi teman                                  !\n");
@@ -585,26 +586,29 @@ int main() {
 
     if (fgets(input, sizeof(input), stdin)) { // Membaca input sebagai string
         input[strcspn(input, "\n")] = 0; // Menghapus karakter newline dari input
+        
+        // membersihkan layar lagi
         printf("\033[2J\033[1;1H"); 
         
-        if (isdigit(input[0])) { // Memeriksa apakah karakter pertama adalah digit
+        if (isdigit(input[0])) { // Memeriksa apakah karakter pertama adalah digit KONDISI ANGKA
             pilihanMenu = atoi(input); // Mengonversi string menjadi integer
             if (pilihanMenu < 1 || pilihanMenu > 4) {
-                printf("\n===================================================================\n");
-                printf("!              Input tidak valid! Harap masukkan angka 1-4.       !\n");
+                printf("===================================================================\n");
+                printf("!            Input tidak valid! Harap masukkan angka 1-4.         !\n");
                 printf("===================================================================\n");
             }
-        } else {
-            printf("\n===================================================================\n");
+        } else { // KONDISI 
+            printf("===================================================================\n");
             printf("!              Input tidak valid! Harap masukkan angka 1-4.       !\n");
             printf("===================================================================\n");
-            pilihanMenu = 0; // Menetapkan nilai 0 untuk mencegah loop
         }
     }
     } while (pilihanMenu < 1 || pilihanMenu > 4);
 
+        // membersihkan layar
         printf("\033[2J\033[1;1H"); 
 
+        // sudah pilihan pasti 1-4
         switch (pilihanMenu) {
             case 1:
                 simpanData(data, &jumlah_data);
@@ -612,7 +616,6 @@ int main() {
             case 2:
                 if (jumlah_data > 0) {
                     tampilkanData(data, jumlah_data, tanggalSekarang); // Panggil tampilkanData di sini
-
                 do {
                 printf("\nApakah Anda ingin kembali ke menu? (y): ");
                 scanf(" %c", &lanjutInformasi);
@@ -634,6 +637,7 @@ int main() {
                 }
                 break;
             case 3:                
+                // membersihkan layar 
                 printf("\033[2J\033[1;1H");
                 printf("\n===================================================================\n");
                 printf("!    Pilih zodiak yang ingin Anda ketahui informasinya:           !\n");
